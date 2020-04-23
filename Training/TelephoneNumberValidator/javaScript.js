@@ -2,8 +2,11 @@
 var inASCCIval;
 var len;
 
+
+
+
 function telephoneCheck(input) {
-    len = input.length;
+    var len = input.length;
 
     //valindate input values
 
@@ -63,9 +66,16 @@ function telephoneCheck(input) {
 
     var val = input[counter];   // check for number, space or -
 
+    if (len==8){
+
+    }
+
+    else {
+
+    
     var at5 = val.charCodeAt(0);
 
-
+ 
 
     if ((val == "-") || (val == " ")) {
         ar = "ar";
@@ -86,11 +96,45 @@ function telephoneCheck(input) {
     // check the 9th number for space or -
     var counter = len - 1 - 3 - 5;
 
+    
+
     var val = input[counter];   // check for number, space or -
+    
 
     var at5 = val.charCodeAt(0);
 
+    if ((val == "-") || (val == " ")) {
+        ar = "ar";
+    }
 
+
+    else if ((val == ")")) {
+        ar = "ar";
+    }
+
+    else if ((at5 >= 48) && (at5 <= 57)) {
+        ar = "ar";
+
+    }
+    else {
+        return false;
+    }
+
+
+    if (len==15){
+       if (input[0]==1 && input[1]==" " ){
+       }
+       else if (input[1]=="("){}
+       else {
+           return false;
+       }
+        
+    }
+
+}//
+
+
+/*
 
     if ((val == "-") || (val == " ")) {
         ar = "ar";
@@ -107,9 +151,9 @@ function telephoneCheck(input) {
 
     }
 
-    else {
-        return false;
-    }
+    */
+
+ 
 
 
 
@@ -118,11 +162,11 @@ function telephoneCheck(input) {
 
 
 
-    return true;
+return true;
 
 }
 
-var tele = " 123-456-5555";
+var tele = "5555555"  ;
 var ans = telephoneCheck(tele);
 var ww = '';
   // 0 has code of 48
@@ -143,3 +187,4 @@ var ww = '';
 1 555 555 5555
 
 */
+
