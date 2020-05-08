@@ -1,0 +1,59 @@
+html, body { 
+    height: 100%;
+    
+    margin: 0;
+}
+
+
+#root{
+    height: 100%;
+    background-color: lightblue;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+
+#casing {
+    display: inline-block;
+    background-color: aqua;
+    position: relative;
+    left:40%; 
+    top: 250px;
+    width:110px;
+    
+}
+#display-top, #display-bottom{
+    word-wrap: break-word;
+    width:110px;
+}
+
+#display-casing{
+
+    background-color: black;
+    color: white;
+}
+
+#display-top{
+    color: yellow
+}
+
+.button{
+    width: 30px;
+    text-align: center;
+    height: 30px;
+    background-color: grey;
+    border: rgb(37, 29, 29);
+    border-style: solid;
+}
+
+#AC{
+    width: 60px;
+}
+
+#root{
+    justify-content: center;
+    align-items: center;
+}
