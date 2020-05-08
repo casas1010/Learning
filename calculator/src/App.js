@@ -19,34 +19,69 @@ class App extends React.Component {
     this.state = {
       topDisplay: 0,
       bottomDisplay: 0,
-      reset: true,
-      ACreset:true,
+      reset: false,
+      ACreset: true,
     }
     this.handleClick = this.handleClick.bind(this);
   }
 
-  checkLenght(){
-    let topLen = this.state.topDisplay.length;
-    let botLen = this.state.bottomDisplay.length;
-    if (botLen==12){
-      componentDidMount() {
-        setInterval(this.myFunction, 3000)
-     }
-
-    }
-
+  checkLenght() {
+    
 
   }
 
+
+
   handleClick(event) {
+    /*
+    let topLen = this.state.topDisplay.length;
+    let botLen = this.state.bottomDisplay.length;
+    if (botLen == 14 || topLen == 3) {
+      document.getElementById('button-casing').style.pointerEvents = 'none';
+      this.setState({
+        topDisplay: 'max amount of inputs:14',
+        bottomDisplay: 'max amount of inputs:14',
+      });
+      
+      setTimeout(
+
+        () => {
+          this.setState({
+            topdisplay: 0,
+            bottomdisplay: 0,})
+          document.getElementById('button-casing').style.pointerEvents = 'auto';
+
+        }, 1000);
+
+    }*/
+    this.checkLenght();
     let ev = event.target.textContent;
     let evChar = ev.charCodeAt();
     //alert(ev);
 
-    if ( ev =="="){
-      this.setState({
-        topDisplay: eval(this.state.topDisplay)
-      })
+    if (ev == "=") {
+
+      try {
+        this.setState({
+          topDisplay: eval(this.state.topDisplay)
+        })
+      }
+      catch (err) {
+        this.setState({
+          topDisplay: 'Error',
+          bottomDisplay: 0,
+        });
+        setInterval(() => {
+          this.setState({
+            topDisplay: 0,
+            bottomDisplay: 0,
+          });
+
+        }, 1000);
+        throw "NaN"
+
+      }
+
     }
     if (ev == 'AC') {
       this.setState({
@@ -55,8 +90,10 @@ class App extends React.Component {
         ACreset: true
       })
     }
+
     // initial conditions for number input
     if (this.state.ACreset == true) {
+
       if (evChar >= 48 && evChar <= 57) {
         this.setState({
           bottomDisplay: ev,
@@ -89,7 +126,7 @@ class App extends React.Component {
         //alert('its not a number!')
 
         this.setState({
-          topDisplay: this.state.topDisplay+ev ,
+          topDisplay: this.state.topDisplay + ev,
           bottomDisplay: ev,
           reset: true
         });
@@ -101,6 +138,12 @@ class App extends React.Component {
   }
 
   render() {
+    /*
+overflow: hidden;
+    text-overflow: ellipsis;
+    text-align: right;
+
+    */
 
 
     return (

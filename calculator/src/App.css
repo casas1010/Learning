@@ -17,21 +17,26 @@ html, body {
 
 
 #casing {
-    display: inline-block;
-    background-color: aqua;
-    position: relative;
-    left:40%; 
-    top: 250px;
+    position: fixed;
+    left:50%;
+    bottom:50%;
+ 
     width:110px;
-    
 }
 #display-top, #display-bottom{
-    word-wrap: break-word;
-    width:110px;
+    
+    text-align: right;
+    overflow: auto;
+    
+
+
 }
 
 #display-casing{
-
+    
+    word-wrap: break-word;
+    
+    
     background-color: black;
     color: white;
 }
@@ -53,7 +58,4 @@ html, body {
     width: 60px;
 }
 
-#root{
-    justify-content: center;
-    align-items: center;
-}
+
