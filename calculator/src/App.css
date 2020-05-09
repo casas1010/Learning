@@ -20,8 +20,9 @@ html, body {
     position: fixed;
     left:50%;
     bottom:50%;
+    width:120px;
  
-    width:110px;
+    
 }
 #display-top, #display-bottom{
     
